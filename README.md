@@ -1,4 +1,4 @@
-# ETL Pipeline
+# ETL Pipeline Fashion Studio
 
 ## Setup Environment - Command Prompt
 ```
