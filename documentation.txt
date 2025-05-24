@@ -1,0 +1,34 @@
+# Initiate python environment
+py -m venv .env
+
+# Activate env
+.env\Scripts\Activate
+
+# install libraries in the requirements.txt file
+pip install -r requirements.txt
+
+# Creating a database in PostgreSQL
+CREATE USER nurrizkyaj WITH ENCRYPTED PASSWORD 'fsdb';
+CREATE DATABASE fashionstudiodb;
+
+# Grant database access to users
+GRANT ALL ON DATABASE fashionstudiodb TO nurrizkyaj;
+ALTER DATABASE fashionstudiodb OWNER TO nurrizkyaj;
+
+# Run the script
+python main.py
+
+# Login to postgres database
+psql --username nurrizkyaj --dbname fashionstudiodb
+SELECT * FROM products;
+
+# Run unit test
+python -m pytest tests
+
+# Run coverage test
+coverage run -m pytest tests
+
+# Check coverage test results
+coverage html
+
+# Google Sheets URL: https://docs.google.com/spreadsheets/d/1AAvV5eZPc8Ond7ehDJnDjkwNnnQ_Km51ClWP97pcwqM/edit?usp=sharing
